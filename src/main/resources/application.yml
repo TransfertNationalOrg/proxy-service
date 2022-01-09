@@ -1,0 +1,40 @@
+server:
+  port: 9999
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+spring:
+  application:
+    name: proxy-service
+  cloud:
+    gateway:
+      enabled: true
+      routes:
+        - id: client-service
+          uri: lb://client-service
+          order: 9000
+          predicates:
+            - Path=/clients/**
+        - id: agent-service
+            uri: lb://agent-service
+            order: 9000
+            predicates:
+              - Path=/agents/**
+        - id: transfert-service
+            uri: lb://transfert-service
+            order: 9000
+            predicates:
+              - Path=/transferts/**
+        - id: back-office-service
+            uri: lb://back-office-service
+            order: 9000
+            predicates:
+              - Path=/back-offices/**
+        - id: cmi-service
+            uri: lb://cmi-service
+            order: 9000
+            predicates:
+              - Path=/cmis/**
