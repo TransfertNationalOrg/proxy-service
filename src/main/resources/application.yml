@@ -19,22 +19,22 @@ spring:
           predicates:
             - Path=/clients/**
         - id: agent-service
-            uri: lb://agent-service
-            order: 9000
-            predicates:
-              - Path=/agents/**
+          uri: lb://agent-service
+          order: 9000
+          predicates:
+            - Path=/agents/**
         - id: transfert-service
-            uri: lb://transfert-service
-            order: 9000
-            predicates:
-              - Path=/transferts/**
+          uri: lb://transfert-service
+          order: 9000
+          predicates:
+            - Path=/transferts/**
         - id: back-office-service
-            uri: lb://back-office-service
-            order: 9000
-            predicates:
-              - Path=/back-offices/**
+          uri: lb://back-office-service
+          order: 9000
+          predicates:
+            - Path=/back-offices/**
         - id: cmi-service
-            uri: lb://cmi-service
-            order: 9000
-            predicates:
-              - Path=/cmis/**
+          uri: lb://cmi-service
+          order: 9000
+          predicates:
+            - Path=/cmis/**
