@@ -17,24 +17,24 @@ spring:
           uri: lb://client-service
           order: 9000
           predicates:
-            - Path=/clients/**
+            - Path=/client/**
         - id: agent-service
           uri: lb://agent-service
           order: 9000
           predicates:
-            - Path=/agents/**
+            - Path=/agent/**
         - id: transfert-service
           uri: lb://transfert-service
           order: 9000
           predicates:
-            - Path=/transferts/**
+            - Path=/transfert/**
         - id: back-office-service
           uri: lb://back-office-service
           order: 9000
           predicates:
-            - Path=/back-offices/**
+            - Path=/back-office/**
         - id: cmi-service
           uri: lb://cmi-service
           order: 9000
           predicates:
-            - Path=/cmis/**
+            - Path=/cmi/**
