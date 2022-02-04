@@ -18,6 +18,7 @@ spring:
           order: 9000
           predicates:
             - Path=/client/**
+            - Path=/compte/**
         - id: agent-service
           uri: lb://agent-service
           order: 9000
