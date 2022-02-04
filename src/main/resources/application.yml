@@ -38,3 +38,8 @@ spring:
           order: 9000
           predicates:
             - Path=/cmi/**
+        - id: beneficiaire-service
+          uri: lb://beneficiaire-service
+          order: 9000
+          predicates:
+            - Path=/beneficiaire/**
